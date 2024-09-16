@@ -233,14 +233,20 @@ color:white !important;
 
 }
 .products{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,auto));
-  gap: 2rem;
-  margin-left: 100px;
-  margin-right: 100px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,auto)); */
+ 
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .row{
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 5px;
   position: relative;
   /* transition: all .40s; */
 }
@@ -265,7 +271,7 @@ color:white !important;
   padding: 3px 10px ;
 }
 .heart{
-  right: 0;
+  right: 10px;
   position: absolute;
   font-size: 20px;
 }
@@ -316,12 +322,22 @@ font-weight: 600;
   } 
 
 .parent{
- 
-  display: grid;
+ display: flex;
+ justify-content: space-between;
+ margin: 10px;
+ flex-wrap: wrap;
+
+  /* display: grid;
   /* padding: 100px; */
-  grid-template-columns: repeat(auto-fit, minmax(260px,auto));
-  gap: 1rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(260px,auto));
+  gap: 1rem; */ 
  
+}
+.child{
+  padding: 10px 10px;
+  width: 32%;
+ 
+  gap: 10px;
 }
 .child img{
   width: 100%;
