@@ -56,19 +56,23 @@ products.innerHTML = productsdata.map((x) => {
             <div><img src="${x.img}"></div>
             <h5>sale</h5>
             <div class="heart">
-                <i class='bx bx-heart'></i>
+                <i class="fas fa-shopping-cart"></i>
             </div>
             <div class="rating"> 
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
+              <i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half-alt"></i>
+
             </div>
             <div class="price">
                 <h4>${x.name}</h4>
                 <p>${x.price}</p>
             </div>
+             <div class="button">
+               <i class='bx bx-dash'></i>
+               </div>
         </div>
     `;
 }).join("");
