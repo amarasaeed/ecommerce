@@ -52,7 +52,7 @@ let productsdata = [
 let products = document.getElementById('products');
 products.innerHTML = productsdata.map((x) => {
     return `
-        <div class="row" onclick="showDetails('${x.name}', '${x.img}', '${x.price}', '${x.desc || 'No description available.'}')">
+        <div class="row" onclick="showDetails('${x.name}', '${x.img}', '${x.price}', '${x.desc }')">
             <div><img src="${x.img}"></div>
             <h5>sale</h5>
             <div class="heart">
@@ -78,5 +78,5 @@ function showDetails(name, img, price, desc) {
     localStorage.setItem('productImage', img);
     localStorage.setItem('productPrice', price);
     localStorage.setItem('productDescription', desc);
-    window.location.href = '../html/productdetails.html'; // Adjust path if necessary
+    window.location.href = '../html/productdetails.html'; 
 }
