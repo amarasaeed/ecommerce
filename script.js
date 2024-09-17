@@ -56,7 +56,7 @@ products.innerHTML = productsdata.map((x) => {
             <div><img src="${x.img}"></div>
             <h5>sale</h5>
             <div class="heart">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart" onclick="event.stopPropagation()"></i>
             </div>
             <div class="rating"> 
               <i class="fas fa-star"></i>
@@ -70,9 +70,7 @@ products.innerHTML = productsdata.map((x) => {
                 <h4>${x.name}</h4>
                 <p>${x.price}</p>
             </div>
-             <div class="button">
-               <i class='bx bx-dash'></i>
-               </div>
+            
         </div>
     `;
 }).join("");
@@ -83,4 +81,7 @@ function showDetails(name, img, price, desc) {
     localStorage.setItem('productPrice', price);
     localStorage.setItem('productDescription', desc);
     window.location.href = '../html/productdetails.html'; 
+    
 }
+
+

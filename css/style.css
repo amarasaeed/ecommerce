@@ -9,7 +9,7 @@
 .header{
   overflow: hidden;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   background-position: center;
   background-size: cover;
   background-image: url("../images/banner-3.png");
@@ -20,10 +20,15 @@ nav{
   justify-content: space-between;
   align-items: center;
   margin-top: 5px;
-  margin-left: 100px;
-  margin-right: 100px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-right: 100px;
+  padding-left: 100px;
   padding-top: 20px;
-
+  background-color:gainsboro;
+  top: 0;
+  z-index: 1000;
+ 
 }
 .logo{
   max-width: 120px;
@@ -147,29 +152,27 @@ color:white !important;
     background-image: url("../images/banner-3.png");
   }
   .nav {
-    position: absolute; /* Position relative to the header */
-    right: 0; /* Align to the right */
-    top: 0; /* Start from the top */
-    height: 100%; /* Match the height of the header */
-    width: 200px; /* Width of the navbar */
-    background-color: #333; /* Background color */
+    position: absolute; 
+    right: 0; 
+    top: 0; 
+    height: 100%; 
+    width: 200px; 
+    background-color: #333;
     display: flex;
-    flex-direction: column; /* Stack links vertically */
-    justify-content: flex-start; /* Align items at the start */
-    align-items: flex-start; /* Align items to the left */
-    padding-top: 20px; /* Padding at the top */
+  
+    padding-top: 20px; 
     margin-top: 80px;
 }
 
-/* Links inside the navbar */
+
 .nav a {
-    padding: 15px 20px; /* Padding for the links */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Font size */
-    color: white; /* Text color */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width */
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    padding: 15px 20px;
+    text-decoration: none; 
+    font-size: 18px;
+    color: white; 
+    width: 100%; 
+    box-sizing: border-box; 
+    transition: background-color 0.3s ease;
 }
   /* nav{
     position: sticky;
@@ -192,15 +195,11 @@ color:white !important;
   .nav a:hover{
     color: red;
   }
-  .icons i{
-    padding: 5px;
-    cursor: pointer;
-    font-size: 25px;
+.nav #cart{
+   
+    font-size: 30px;
   }
-  .icons i:hover{
-    transform: scale(1.2);
-    color: red;
-  }
+  
   .hero{
     transform: translate(100px, 150px);
     margin-bottom: 0;
@@ -278,6 +277,7 @@ color:white !important;
   right: 10px;
   position: absolute;
   font-size: 20px;
+  position: absolute;
   
 }
 .heart:hover{
