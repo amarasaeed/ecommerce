@@ -7,56 +7,56 @@ let productsdata = [
         name: "Half Running Set",
         price: "2000",
         desc: "A comfortable half running set for your daily workouts.",
-        total:"2000",
+        total: "2000",
     },
     {
         img: "../images/2.jpg",
         name: "Full Running Set",
         price: "3000",
         desc: "A full running set for all seasons.",
-        total:"3000",
+        total: "3000",
     },
     {
         img: "../images/3.jpg",
         name: "Winter Jacket",
         price: "4000",
         desc: "Stay warm with this cozy winter jacket.",
-        total:"4000",
+        total: "4000",
     },
     {
         img: "../images/4.jpg",
         name: "Summer Set",
         price: "3000",
         desc: "Light and airy summer wear.",
-        total:"3000",
+        total: "3000",
     },
     {
         img: "../images/5.jpg",
         name: "Spring Tracksuit",
         price: "5000",
         desc: "Perfect for springtime runs.",
-        total:"5000",
+        total: "5000",
     },
     {
         img: "../images/6.jpg",
         name: "Rain Jacket",
         price: "6000",
         desc: "Water-resistant jacket for rainy days.",
-        total:"6000",
+        total: "6000",
     },
     {
         img: "../images/7.jpg",
         name: "Casual Hoodie",
         price: "1000",
         desc: "Comfortable hoodie for casual wear.",
-        total:"1000",
+        total: "1000",
     },
     {
         img: "../images/8.jpg",
         name: "Gym Shorts",
         price: "3000",
         desc: "Durable shorts for intense gym sessions.",
-        total:"3000",
+        total: "3000",
     }
 ];
 // select the div container and set it innerhtml by usi map function 
@@ -64,7 +64,7 @@ let productsdata = [
 let products = document.getElementById('products');
 products.innerHTML = productsdata.map((x) => {
     return `
-        <div class="row" onclick="showDetails('${x.name}', '${x.img}', '${x.price}', '${x.desc }')">
+        <div class="row" onclick="showDetails('${x.name}', '${x.img}', '${x.price}', '${x.desc}')">
             <div><img src="${x.img}"></div>
             <h5>sale</h5>
             <div class="heart" >
@@ -92,8 +92,8 @@ function showDetails(name, img, price, desc) {
     localStorage.setItem('productImage', img);
     localStorage.setItem('productPrice', price);
     localStorage.setItem('productDescription', desc);
-    window.location.href = '../html/productdetails.html'; 
-    
+    window.location.href = '../html/productdetails.html';
+
 }
 // cartpage
 let counter = document.getElementById('counter') //1 select the counter box
@@ -106,7 +106,7 @@ else {
     counter.innerText = 0
 }
 //this function has been created for the purpose of adding that product in the cart page of which carticon we click
-function addToCart(name, img,price,total) {
+function addToCart(name, img, price, total) {
 
     let existingData = localStorage.getItem('data');
     let items = existingData ? existingData : '';
@@ -122,7 +122,7 @@ function addToCart(name, img,price,total) {
     </td>
 </tr>`
     items += newItem;
-    localStorage.setItem('data', items) 
+    localStorage.setItem('data', items)
     //4 convert the data type of  value which have gotten from local storage and save it in variable
     var cartNumber = (parseInt(localStorage.getItem('value'))) || 0
     //5 add 1 in the gotten value
