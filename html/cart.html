@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+   <nav>
+    <img src="../images/logo.png" style="width: 15%;height: 15%;" class="logo">
+    <div class="nav">
+        <a href="../html/index.html">Home </a>
+        <a href="">Shop </a>
+        <a href="">product </a>
+        <a href="">page </a>
+        <a href="">docs </a>
+        
+        <a href="" id="cart" style="position: relative; font-size: 20px;">  <i class="fas fa-shopping-cart"></i> <span id="counter"
+            style=" position:absolute ;top:  0px; right: 6px; font-size: 14px; background-color:beige; border-radius: 26%; height: 20px; width: 15px; text-align: center;">0</span></a>
+       
+    </div>
+</nav>
+<div id="cart-data">
+    <table style="width: 100%;">
+<thead>
+    <tr id="cart-item">
+        <td>Image</td>
+        <td>product</td>
+        <td>price</td>
+        <td>quantity</td>
+        <td>total</td>
+        <td>remove</td>
+    </tr>
+</thead>
+<tbody  id="mainContainer">
+<!-- <tr class="cart-item" id="check">
+    <td class="image"><img src="../images/1.jpg" alt=""  style="width: 70px;height: 70px; " ></td>
+    <td class="name">Half Running Set</td>
+    <td class="price">$99-$129</td>
+    <td class="quantity"><span class="decrement" >-</span>
+        <span id="one" class="count">1</span>
+        <span class="increment">+</span></td>
+    <td class="total">$99-$129</td>
+    <td><i class="fas fa-times" style="border: 1px solid black; border-radius: 100%; padding: 2px 6px 2px 5px; "></i></button>
+    </td>
+</tr>
+<tr class="cart-item"></tr>
+    <td class="image"><img src="../images/1.jpg" alt=""  style="width: 70px;height: 70px; " ></td>
+    <td class="name">Half Running Set</td>
+    <td class="price">$99-$129</td>
+    <td class="quantity"><span class="decrement" >-</span>
+        <span id="one" class="count">1</span>
+        <span class="increment">+</span></td>
+    <td class="total">$99-$129</td>
+    <td><i class="fas fa-times" style="border: 1px solid black; border-radius: 100%; padding: 2px 6px 2px 5px; "></i></button>
+    </td>
+</tr> -->
+<!-- <tr class="cart-Item">
+    <td id="image"><img src="${img}" alt=""  style="width: 70px;height: 70px; " ></td>
+    <td id="name">${name}</td>
+    <td class="price">3000</td>
+    <td id="quantity"><span class="decrement" >-</span>
+        <span id="one" class="count">1</span>
+        <span class="increment">+</span></td>
+    <td class="total">3000</td>
+    <td><i class="fas fa-times removeItem" style="border: 1px solid black; border-radius: 100%; padding: 2px 6px 2px 5px; "></i>
+    </td>
+</tr> -->
+</tbody>
+
+    </table>
+</div>
+<script>
+    
+    let mainContainer = document.getElementById('mainContainer')
+        let productData = localStorage.getItem('data')
+        mainContainer.innerHTML = productData
+        let counterabc = document.getElementById('counter')
+        let ans = localStorage.getItem('value')
+        counterabc.innerText = ans
+let removeItem=document.querySelectorAll(".removeItem")
+removeItem.forEach((x)=>{
+    x.addEventListener("click",function(){
+        let container= this.closest(".cart-Item")
+        container.remove()
+      
+    localStorage.setItem('data', mainContainer.innerHTML)
+    let cartNumber = (parseInt(localStorage.getItem('value'))) 
+    cartNumber--;
+    localStorage.setItem('value', cartNumber)
+    counterabc.innerText =cartNumber
+    })
+   
+})
+        let Counter = document.querySelectorAll('.count')
+        let Decrement = document.querySelectorAll('.decrement')
+        let Increment = document.querySelectorAll('.increment')
+        let price = document.querySelectorAll('.price')
+        let total = document.querySelectorAll('.total')
+
+        Increment.forEach ((v,i) =>{
+            v.addEventListener("click",()=>{
+                let value=(parseInt(Counter[i].innerHTML))
+                value++
+                Counter[i].innerHTML=value
+
+                let productPrice = parseInt(price[i].innerText)
+                let totalprice =  productPrice * value
+                total[i].innerText = totalprice
+              
+                localStorage.setItem('data', mainContainer.innerHTML)
+            })
+        })
+Decrement.forEach((v,i)=>{
+    v.addEventListener("click",()=>{
+        let value=(parseInt(Counter[i].innerHTML))
+    
+        if (value>0){
+            value--
+
+        }
+        Counter[i].innerHTML=value
+        let productPrice = parseInt(price[i].innerText)
+                let totalprice =  productPrice * value
+                total[i].innerText = totalprice
+              
+        localStorage.setItem('data', mainContainer.innerHTML)
+    })
+})
+</script>
+<script src="../script.js"></script>
+
+</body>
+</html>
