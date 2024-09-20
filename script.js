@@ -97,7 +97,7 @@ function showDetails(name, img, price, desc) {
 }
 // cartpage
 let counter = document.getElementById('counter') //1 select the counter box
-let storedNumber = localStorage.getItem('v')//2 get data from local storage and store it in variable
+let storedNumber = localStorage.getItem('value')//2 get data from local storage and store it in variable
 //3 check if there is any data or not 
 if (storedNumber != null) {
     counter.innerText = storedNumber
