@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,36 +14,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 </head>
-<body>
-   <nav>
-    <img src="../images/logo.png" style="width: 15%;height: 15%;" class="logo">
-    <div class="nav">
-        <a href="../html/index.html">Home </a>
-        <a href="">Shop </a>
-        <a href="">product </a>
-        <a href="">page </a>
-        <a href="">docs </a>
-        
-        <a href="" id="cart" style="position: relative; font-size: 20px;">  <i class="fas fa-shopping-cart"></i> <span id="counter"
-            style=" position:absolute ;top:  0px; right: 6px; font-size: 14px; background-color:beige; border-radius: 26%; height: 20px; width: 15px; text-align: center;">0</span></a>
-       
-    </div>
-</nav>
-<div id="cart-data">
-    <table style="width: 100%;">
-<thead>
-    <tr id="cart-item">
-        <td>Image</td>
-        <td>product</td>
-        <td>price</td>
-        <td>quantity</td>
-        <td>total</td>
-        <td>remove</td>
-    </tr>
-</thead>
-<tbody  id="mainContainer">
 
-<!-- <tr class="cart-Item">
+<body>
+    <nav>
+        <img src="../images/logo.png" style="width: 15%;height: 15%;" class="logo">
+        <div class="nav">
+            <a href="../html/index.html">Home </a>
+            <a href="">Shop </a>
+            <a href="">product </a>
+            <a href="">page </a>
+            <a href="">docs </a>
+
+            <a href="" id="cart" style="position: relative; font-size: 20px;"> <i class="fas fa-shopping-cart"></i>
+                <span id="counter"
+                    style=" position:absolute ;top:  0px; right: 6px; font-size: 14px; background-color:beige; border-radius: 26%; height: 20px; width: 15px; text-align: center;">0</span></a>
+
+        </div>
+    </nav>
+    <div id="cart-data">
+        <table style="width: 100%;">
+            <thead>
+                <tr id="cart-item">
+                    <td>Image</td>
+                    <td>product</td>
+                    <td>price</td>
+                    <td>quantity</td>
+                    <td>total</td>
+                    <td>remove</td>
+                </tr>
+            </thead>
+            <tbody id="mainContainer">
+
+                <!-- <tr class="cart-Item">
     <td id="image"><img src="${img}" alt=""  style="width: 70px;height: 70px; " ></td>
     <td id="name">${name}</td>
     <td class="price">3000</td>
@@ -53,69 +56,70 @@
     <td><i class="fas fa-times removeItem" style="border: 1px solid black; border-radius: 100%; padding: 2px 6px 2px 5px; "></i>
     </td>
 </tr> -->
-</tbody>
+            </tbody>
 
-    </table>
-</div>
-<script>
-    
-    let mainContainer = document.getElementById('mainContainer')
+        </table>
+    </div>
+    <script>
+
+        let mainContainer = document.getElementById('mainContainer')
         let productData = localStorage.getItem('data')
         mainContainer.innerHTML = productData
         let counterabc = document.getElementById('counter')
         let ans = localStorage.getItem('value')
         counterabc.innerText = ans
-let removeItem=document.querySelectorAll(".removeItem")
-removeItem.forEach((x)=>{
-    x.addEventListener("click",function(){
-        let container= this.closest(".cart-Item")
-        container.remove()
-      
-    localStorage.setItem('data', mainContainer.innerHTML)
-    let cartNumber = (parseInt(localStorage.getItem('value'))) 
-    cartNumber--;
-    localStorage.setItem('value', cartNumber)
-    counterabc.innerText =cartNumber
-    })
-   
-})
+        let removeItem = document.querySelectorAll(".removeItem")
+        removeItem.forEach((x) => {
+            x.addEventListener("click", function () {
+                let container = this.closest(".cart-Item")
+                container.remove()
+
+                localStorage.setItem('data', mainContainer.innerHTML)
+                let cartNumber = (parseInt(localStorage.getItem('value')))
+                cartNumber--;
+                localStorage.setItem('value', cartNumber)
+                counterabc.innerText = cartNumber
+            })
+
+        })
         let Counter = document.querySelectorAll('.count')
         let Decrement = document.querySelectorAll('.decrement')
         let Increment = document.querySelectorAll('.increment')
         let price = document.querySelectorAll('.price')
         let total = document.querySelectorAll('.total')
 
-        Increment.forEach ((v,i) =>{
-            v.addEventListener("click",()=>{
-                let value=(parseInt(Counter[i].innerHTML))
+        Increment.forEach((v, i) => {
+            v.addEventListener("click", () => {
+                let value = (parseInt(Counter[i].innerHTML))
                 value++
-                Counter[i].innerHTML=value
+                Counter[i].innerHTML = value
 
                 let productPrice = parseInt(price[i].innerText)
-                let totalprice =  productPrice * value
+                let totalprice = productPrice * value
                 total[i].innerText = totalprice
-              
+
                 localStorage.setItem('data', mainContainer.innerHTML)
             })
         })
-Decrement.forEach((v,i)=>{
-    v.addEventListener("click",()=>{
-        let value=(parseInt(Counter[i].innerHTML))
-    
-        if (value>0){
-            value--
+        Decrement.forEach((v, i) => {
+            v.addEventListener("click", () => {
+                let value = (parseInt(Counter[i].innerHTML))
 
-        }
-        Counter[i].innerHTML=value
-        let productPrice = parseInt(price[i].innerText)
-                let totalprice =  productPrice * value
+                if (value > 0) {
+                    value--
+
+                }
+                Counter[i].innerHTML = value
+                let productPrice = parseInt(price[i].innerText)
+                let totalprice = productPrice * value
                 total[i].innerText = totalprice
-              
-        localStorage.setItem('data', mainContainer.innerHTML)
-    })
-})
-</script>
-<script src="../script.js"></script>
+
+                localStorage.setItem('data', mainContainer.innerHTML)
+            })
+        })
+    </script>
+    <script src="../script.js"></script>
 
 </body>
+
 </html>
