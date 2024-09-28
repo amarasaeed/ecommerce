@@ -32,6 +32,9 @@ nav {
   z-index: 1000;
 
 }
+.nav .menu-btn{
+  
+}
 .nav .close{
   display: none;
 }
@@ -161,7 +164,7 @@ nav {
 
 }
 
-@media(max-width:797px) {
+@media(max-width:761px) {
 
   .header {
     position: relative;
@@ -186,7 +189,13 @@ nav {
 
    
   }
-
+  .nav .menu-btn{
+    display: block;
+  }
+  .nav .close{
+    display: block;
+    padding-left: 20px;
+  }
 
   .nav a {
    
