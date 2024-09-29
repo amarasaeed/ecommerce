@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Jost', sans-serif;
   text-decoration: none;
+ 
 
 }
 
@@ -32,9 +33,10 @@ nav {
   z-index: 1000;
 
 }
-.nav .menu-btn{
-  
+.menu-btn {
+  display: none !important;
 }
+
 .nav .close{
   display: none;
 }
@@ -63,6 +65,25 @@ nav {
   transform: scale(1.2);
   color: red;
 }
+/* Styles for the cart link */
+#cart {
+  position: relative;
+  font-size: 20px;
+}
+
+/* Styles for the counter inside the cart */
+#counter {
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  font-size: 14px;
+  background-color: beige;
+  border-radius: 26%;
+  height: 20px;
+  width: 15px;
+  text-align: center;
+}
+
 
 .hero h6 {
   font-size: 15px;
@@ -186,15 +207,37 @@ nav {
   display: flex;
   flex-direction: column;
   padding-top: 40px;
+  
 
    
+  }
+  .menu-btn {
+    display: block !important;
+  }
+  
+  .nav .close{
+    display: block;
+    padding-left: 20px;
   }
   .nav .menu-btn{
     display: block;
   }
-  .nav .close{
-    display: block;
-    padding-left: 20px;
+  #cart {
+    position: relative;
+    font-size: 15px;
+  }
+  
+  /* Styles for the counter inside the cart */
+  #counter {
+    position: absolute;
+    top: 3px;
+    left: 40px;
+    font-size: 14px;
+    background-color:gray;
+    border-radius: 26%;
+    height: 20px;
+    width: 15px;
+    text-align: center;
   }
 
   .nav a {

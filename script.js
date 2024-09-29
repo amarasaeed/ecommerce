@@ -141,3 +141,12 @@ function addToCart(name, img, price, total) {
     //this event has been used to stop the cart button to display the details of the product
     event.stopPropagation()
 };
+let sliderbtn = document.querySelector('.menu-btn')
+let nav = document.querySelector('.nav')
+let crossbtn=document.querySelector('.close')
+sliderbtn.addEventListener('click', () => {
+    nav.style.right = '0'
+})
+crossbtn.addEventListener('click',()=>{
+    nav.style.right='-100%'
+})
